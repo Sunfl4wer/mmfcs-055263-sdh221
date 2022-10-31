@@ -28,7 +28,7 @@ def GetRgbImage(labelToColor, labeled):
             rgb[x][y][2] = c[2]
     return rgb
 
-image = Image.open("pcb2.webp") # open colour image
+image = Image.open("vintage-newspaper.webp") # open colour image
 gray = image.convert('L') # convert image to grayscale
 
 # Let numpy do the heavy lifting for converting pixels to pure black or white

@@ -1,11 +1,16 @@
 import numpy as np
 
+def getFilter(n):
+    filter = []
+    for i in range(-n, n+1):
+        for j in range(-n, n+1):
+            if i == j and i == 0:
+                continue
+            filter.append([i,j])
+    return filter
+
 def FindNeighbors(x, y, X, Y):
-    filters = [
-        [-1, -1], [-1, 0], [-1, 1],
-        [0, -1], [0, 0], [0, 1],
-        [1, -1], [1, 0], [1, 1]
-        ]
+    filters = getFilter(15)
     neighbors = []
     for f in filters:
         p = [x+f[0], y+f[1]]
