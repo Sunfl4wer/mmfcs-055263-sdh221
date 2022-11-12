@@ -2,6 +2,7 @@ from time import process_time_ns
 from PIL import Image
 from OneComponentAtATime import OneComponentAtATime as ocat
 from TwoPass import TwoPass as tp
+from ColumnRowSection import ColumnRowSection as crs
 import numpy as np
 import random
 import matplotlib.pyplot as plt
@@ -43,7 +44,7 @@ labelsOCAT, labeledOCAT = ocat(bw)
 ocatEnd = process_time_ns()
 
 tpStart = process_time_ns()
-labelsTP, labeledTP = tp(bw)
+labelsTP, labeledTP = crs(bw)
 tpEnd = process_time_ns()
 
 colorsOCAT = GetColors(labelsOCAT)
